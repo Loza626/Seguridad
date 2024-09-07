@@ -1,0 +1,37 @@
+gpg --full-generate-key
+
+
+1) RSA and RSA (default): Esta es la opción más común y recomendada para 
+la mayoría de los usuarios. Te permite cifrar y firmar usando el mismo algoritmo RSA.
+
+2) Selecciona esta opción escribiendo 1 y luego presiona Enter.
+
+3) DSA and Elgamal: Esta opción permite usar DSA (para firmar) y Elgamal (para cifrar). 
+Sin embargo, DSA tiene limitaciones en cuanto al tamaño de la clave y no se recomienda 
+a menos que tengas una razón específica para usarlo.
+
+4) DSA (sign only): Solo para firmar. Esto no se recomienda para usuarios que necesiten cifrado.
+
+5) RSA (sign only): Esta opción es similar a DSA (sign only) pero utiliza RSA solo para firmar. 
+También se recomienda usarlo solo si sabes que solo necesitas firmar.
+
+6) Existing key from card: Para importar una clave existente de una tarjeta de criptografía. 
+Esto generalmente no es relevante para la generación de nuevas claves.
+
+//Elegir opcion 1
+
+gpg --list-keys  
+
+gpg --list-secret-keys 
+
+gpg --export -a "correo-del-destinatario" > public_key.asc //Generar clave publica
+
+gpg --export-secret-keys -a "correo-del-destinatario" > private_key.asc // Generar clave privada
+
+//Cifrar archivo
+gpg --import public_key.asc //Importar clave publica para encriptacion
+gpg -e -r "correo-del-destinatario" archivo.txt
+
+//Decifrar archivo
+gpg --import private_key.asc //Importar clave privada para desencriptacion
+gpg -d archivo.txt.gpg > archivo_desencriptado.txt //Decifrar archivo
