@@ -1,0 +1,12 @@
+Punto más débil de PGP: La gestión de las claves privadas y la confianza en las claves públicas son los puntos más débiles, ya que si una clave privada se compromete o si se acepta una clave pública no verificada, la seguridad se rompe.
+
+Cifrado simétrico: Es conveniente utilizar cifrado simétrico cuando la comunicación es entre dos partes que ya han intercambiado de forma segura una clave secreta, y se requiere un cifrado más rápido y eficiente en recursos.
+
+Ciclo de vida del desarrollo de software seguro:
+
+Planificación: Definir los requisitos de seguridad.
+Diseño: Identificar amenazas y diseñar contramedidas.
+Implementación: Escribir código seguro y aplicar buenas prácticas.
+Pruebas: Realizar pruebas de seguridad, como análisis de vulnerabilidades.
+Despliegue: Configurar de forma segura el entorno de producción.
+Mantenimiento: Monitorear, actualizar y parchear para mitigar nuevas amenazas.
